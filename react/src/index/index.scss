@@ -1,0 +1,48 @@
+.page-header {
+  height: 100px;
+  background-color: #efefef;
+  padding: 0;
+}
+.page-header input {
+  margin: 35px 0 0 35px;
+}
+.left-fixed-height {
+  height: 1150px;
+  overflow: auto;
+  padding: 10px;
+}
+table {
+  border: 3px solid #ccc;
+  margin-top: 20px;
+}
+.table td {
+  border-right: 3px solid #ccc;
+  text-align: center;
+}
+thead {
+  background-color: #ccc;
+  text-align: center;
+}
+thead tr th {
+  text-align: center;
+}
+table.words,
+table.words td,
+.table.words>tbody>tr>td {
+  border: none;
+  margin-top: 0;
+}
+table .td-words {
+  width: 30%;
+  text-align: right;
+}
+table .td-numbers {
+  padding-top: 18px;
+}
+h2 {
+  margin: 40px 0 10px 0;
+}
+.progress {
+  background-color: transparent;
+  box-shadow: none;
+}
