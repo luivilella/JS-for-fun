@@ -1,0 +1,60 @@
+<div class="container">
+
+  <div class="page-header">
+    <input id="idUserSearch" ng-model="$ctrl.userSearch" />
+    <button ng-click="$ctrl.searchUser()">Search</button>
+    <spam ng-if="$ctrl.userNotFound">User not found</spam>
+    <spam ng-if="$ctrl.userSearching">Searching user</spam>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-6 left-fixed-height">
+        <ul class="list-group" ng-show="$ctrl.user.posts.length">
+          <li class="list-group-item" ng-repeat="post in $ctrl.user.posts">
+            <h4>{{post.title}}</h4>
+            <p>{{post.body}}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6" ng-if="$ctrl.wordsStatistics.length">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Word</th>
+              <th>% of all comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="row in $ctrl.wordsStatistics">
+              <td>{{row.word}}</td>
+              <td ng-if="row.pergentageOfTotal !== null">
+                {{row.pergentageOfTotal | number:1}}
+              </td>
+              <td ng-if="row.pergentageOfTotal === null">Loading</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Count of Top 10 Words</h2>
+        <table class="table words">
+          <tbody>
+            <tr ng-repeat="row in $ctrl.wordsStatistics">
+              <td class="td-words">{{row.word}}</td>
+              <td class="td-numbers">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{row.counter * 5}}px;">{{row.counter}}</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
+</div>
