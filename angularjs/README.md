@@ -1,4 +1,4 @@
-# Vue for fun
+# Angular 1.x for fun
 
 ## Running the project
 
