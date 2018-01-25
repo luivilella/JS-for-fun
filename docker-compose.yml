@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+
+  angularjs:
+    container_name: dc-js4fun-angularjs
+    build: 
+      context: ./angularjs
+    command: ['yarn', 'build']
+    working_dir: /deploy
+    volumes:
+      - ./angularjs:/deploy
+      - /deploy/node_modules
+      - ./build/angularjs:/deploy/build
+
+  react:
+    container_name: dc-js4fun-react
+    build: 
+      context: ./react
+    command: ['yarn', 'build']
+    working_dir: /deploy
+    volumes:
+      - ./react:/deploy
+      - /deploy/node_modules
+      - ./build/react:/deploy/build
+
+  vue:
+    container_name: dc-js4fun-vue
+    build: 
+      context: ./vue
+    command: ['yarn', 'build']
+    working_dir: /deploy
+    volumes:
+      - ./vue:/deploy
+      - /deploy/node_modules
+      - ./build/vue:/deploy/dist
